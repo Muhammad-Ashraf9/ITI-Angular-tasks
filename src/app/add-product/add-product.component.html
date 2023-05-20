@@ -1,0 +1,33 @@
+<form [formGroup]="addProduct">
+    <div>
+        <label for="">Title</label>
+        <input type="text" formControlName="title">
+    </div>
+    <div>
+        <small [hidden]="title.valid||title.untouched" class="text-danger">Enter a Title</small>
+    </div>
+    <div>
+        <label for="">Description</label>
+        <input type="text" formControlName="description">
+    </div>
+    <div>
+        <small [hidden]="description.valid||description.untouched" class="text-danger">Enter a description</small>
+    </div>
+    <div>
+        <label for="">Image URL</label>
+        <input type="text" formControlName="image">
+    </div>
+    <div>
+        <small [hidden]="image.valid||image.untouched" class="text-danger">Enter a image</small>
+    </div>
+    <div>
+        <label for="">Price</label>
+        <input type="text" formControlName="price">
+    </div>
+    <div>
+        <small [hidden]="price.valid||price.untouched" class="text-danger">Enter a price</small>
+    </div>
+    <div>
+        <input type="button" [disabled]="addProduct.invalid" value="add" (click)="addNewProduct(addProduct.value)">{{addProduct.value|json}}
+    </div>
+</form>

@@ -1,0 +1,27 @@
+
+<div class="row justify-content-around mt-5">
+   <input type="text" placeholder="Enter new todo" #itemsdata class="col-8">
+<input type="button" value="Add"  class="btn btn-primary col-1 " (click)="additem(itemsdata.value)"> 
+</div>
+
+<div class="row justify-content-start mt-3">
+    <p class="col-2">To-Do list Filter</p>
+    <input type="text" #filterdata placeholder="Filter " class="col-6" (keyup)="compareitems(filterdata.value)">
+     <!-- <input type="button" value="filter" (keyup)="compareitems(filterdata.value)"> -->
+</div>
+<div class="row justify-content-center mt-3 ">
+    <p class="col-3">There are  {{itemsFilter.length}}   todos</p>
+</div>
+<div class="row justify-content-center">
+   <ul class="col-8 ">
+    <li class="p-2" *ngFor="let item of itemsFilter;let i=index">
+        <div class="row justify-content-around" ><div class="col-5">{{item}}</div>
+         <input type="button" class="btn btn-danger col-2 " value="Complete" (click)="removeitem(i)">
+        </div>
+    </li>
+
+
+    </ul> 
+</div>
+
+    

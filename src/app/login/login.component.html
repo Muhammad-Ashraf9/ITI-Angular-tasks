@@ -1,0 +1,29 @@
+<div class="container">
+    <form  #myform="ngForm" (ngSubmit)="login(myform.value)">
+        <div >
+            <label for="userName"><i class="fa-solid fa-user col-"></i></label>
+            <input type="text" class="col-10" placeholder="User Name" name="userName" [(ngModel)]="user.username"  #userName="ngModel" required>
+            <div>
+                <small [hidden]="userName.valid||userName.pristine" class="text-danger">Enter a username</small>
+            </div>
+        </div>
+        <div >
+            <label for="userPassword"><i class="fa-solid fa-lock"></i></label>
+            <input type="password" class="col-10" placeholder="User Password" name="userPassword" [(ngModel)]="user.password" #userPassword="ngModel" required>
+            <div>
+                <small [hidden]="userPassword.valid||userPassword.pristine" class="text-danger">Enter a password</small>
+            </div>
+        </div>
+        <div>
+            <input type="submit"  value="Login" [disabled]="myform.invalid">{{user|json}}
+        </div>
+    </form>
+</div>
+<div>
+    <ul>
+        <li *ngFor="let user of allUsers">
+            <p >{{user.id}}</p>
+        </li>
+    </ul>
+    
+</div>

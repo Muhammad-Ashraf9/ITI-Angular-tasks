@@ -1,0 +1,130 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <app-date-time></app-date-time>
+
+<div class="movie-container" >
+
+
+    
+    <ul class="showcase">
+      <li>
+        <div class="seat"></div>
+        <small>N/A</small>
+      </li>
+      <li>
+        <div class="seat selected"></div>
+        <small>Selected</small>
+      </li>
+      <li>
+        <div class="seat occupied"></div>
+        <small>Occupied</small>
+      </li>    
+    </ul>
+    
+    <div class="container text-center">
+      <div class="screen"></div>
+      <div class="seatsWrapper">
+
+        <div  *ngFor="let seat of seats;let i=index">
+              <div  [classList]="seat.status" (click)="onSelect(seat.id,i)">
+                {{seat.id}}
+              </div>
+
+        </div>
+
+      </div>
+
+      
+    </div>
+    <div >
+      <button class="btn btn-primary" [disabled]="!seatsSelectedArray.length" (click)="onConfirm()" >confirm</button>
+     </div>
+    <div >
+      <button class="btn btn-danger" [disabled]="seatsSelectedArray.length  >0 ? false: true"  (click)="onCancel()" >Cancel</button>
+     </div>
+</div>
+
+    
+      
+      <!-- <div class="row">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+        <div class="row">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat occupied"></div>
+          <div class="seat occupied"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+        <div class="row">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat occupied"></div>
+          <div class="seat occupied"></div>
+        </div>
+        <div class="row">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+        <div class="row">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat occupied"></div>
+          <div class="seat occupied"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+        <div class="row">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat occupied"></div>
+          <div class="seat occupied"></div>
+          <div class="seat occupied"></div>
+          <div class="seat"></div>
+        </div>
+      
+      <p class="text">
+        You have selected <span id="count">0</span> seats for the total price of Rs. <span id="total">0</span>
+      </p>
+    </div>
+  </div>  -->
+  

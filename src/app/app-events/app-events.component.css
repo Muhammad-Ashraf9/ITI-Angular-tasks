@@ -1,0 +1,30 @@
+ul{
+    list-style: none;
+    margin: auto;
+    padding: 10px;
+}
+li{
+    border: 1px solid rgb(124, 110, 110);
+    margin-top: 5px;
+    background-color: rgb(244, 98, 171);
+
+}
+li:hover{
+   transform: scale(1.1);
+   transition:all .5s ;
+}
+div{
+    border: none;
+}
+p{
+    font-size: 25px;
+}
+input[type="button"]:hover{
+    transform: scale(1.2);
+    transition: all .5s;
+}
+input[type="text"]:hover{
+    transform: scale(1.1),skew(10deg);
+    box-shadow:  red 0 0 20px inset;
+    transition: all .5s;
+}

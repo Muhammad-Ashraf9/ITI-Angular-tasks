@@ -1,0 +1,18 @@
+<div class="container">
+    <form  #myform="ngForm" (ngSubmit)="selectSnacks(myform.value)" >
+        <br>
+        <div  *ngFor="let snack of snacks;let i=index">
+           
+            <input type="number" class="col-10"  name={{snack.name}} (change)="changeTotal()" [(ngModel)]="snacksSelected[i]"   required>
+            <br>
+<p>{{snacks[i].name}}</p>
+<p>{{snacks[i].price}}$</p>
+
+        </div>
+
+        <div>
+            <input type="submit"  value="Next" [disabled]="myform.invalid"> {{myform.value|json}}
+        </div>
+    </form>
+    <div><p>{{total}}</p></div>
+</div>

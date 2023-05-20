@@ -1,0 +1,15 @@
+<div class="m-2 bg-primary " >
+
+
+<p>home works!</p>
+<ul>
+    <li *ngFor="let c of peopleByCountry" [ngSwitch]="c.country" >
+         <span *ngSwitchCase="'UK'" class="red">{{ c.country}}</span>
+         <span *ngSwitchCase="'US'" class="green">{{ c.country}}</span>
+         <span *ngSwitchCase="'MARS'" class="blue">{{ c.country}}</span>
+        <ul>
+            <li *ngFor="let p of c.people">{{p.name}}</li>
+        </ul>
+    </li>
+</ul>
+</div>
